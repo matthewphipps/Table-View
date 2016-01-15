@@ -11,6 +11,7 @@ import UIKit
 class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate
 {
     @IBOutlet weak var myTableView: UITableView!
+    @IBOutlet weak var editButton: UIBarButtonItem!
     var superheroes = ["Batman", "Superman", "Aquaman:", "Wonder Woman", "The Flash", "Spiderman"]
     var realNames = ["Bruce Wayne", "Clark Kent", "Arther Curry", "Diana", "Barry Allen", "Peter Parker"]
     
@@ -69,6 +70,30 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         }
         myAlert.addAction(addAction)
         self.presentViewController(myAlert, animated: true, completion: nil)
+    }
+    func tableView(tableView: UITableView, canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+        return true
+    }
+    func tableView(tableView: UITableView, moveRowAtIndexPath sourceIndexPath: NSIndexPath, toIndexPath destinationIndexPath: NSIndexPath) {
+        let superHero = superheroes[sourceIndexPath.row]
+        superheroes.removeAtIndex(sourceIndexPath.row)
+        superheroes.insert(superHero, atIndex: destinationIndexPath.row)
+        let alias = realNames[sourceIndexPath.row]
+        realNames.removeAtIndex(sourceIndexPath.row)
+        realNames.insert(alias, atIndex: destinationIndexPath.row)
+    }
+    @IBAction func editButtonTapped(sender: UIBarButtonItem)
+    {
+        if editButton.tag == 0
+        {
+            myTableView.editing = true
+            editButton.tag = 1
+        }
+        else
+        {
+            myTableView.editing = false
+            editButton.tag = 0
+        }
     }
 }
 

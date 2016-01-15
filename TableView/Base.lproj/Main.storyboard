@@ -62,13 +62,19 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="khX-De-BoC">
-                        <barButtonItem key="rightBarButtonItem" title="+" id="lRs-Pu-PNz">
+                        <barButtonItem key="leftBarButtonItem" systemItem="edit" id="Wsg-76-hmi">
+                            <connections>
+                                <action selector="editButtonTapped:" destination="BYZ-38-t0r" id="MJp-aI-k8U"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="lRs-Pu-PNz">
                             <connections>
                                 <action selector="addButtonTapped:" destination="BYZ-38-t0r" id="wI1-dK-Vmi"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="editButton" destination="Wsg-76-hmi" id="29m-NM-lsw"/>
                         <outlet property="myTableView" destination="gle-6J-ILB" id="1Hc-mt-kEd"/>
                     </connections>
                 </viewController>

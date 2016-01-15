@@ -14,6 +14,7 @@
 		3F7AFFC51C46AD290006B3D9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F7AFFC31C46AD290006B3D9 /* LaunchScreen.storyboard */; };
 		3F7AFFD01C46AD290006B3D9 /* TableViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F7AFFCF1C46AD290006B3D9 /* TableViewTests.swift */; };
 		3F7AFFDB1C46AD290006B3D9 /* TableViewUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F7AFFDA1C46AD290006B3D9 /* TableViewUITests.swift */; };
+		3F7AFFE91C49571D0006B3D9 /* SuperHeroClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F7AFFE81C49571D0006B3D9 /* SuperHeroClass.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		3F7AFFD61C46AD290006B3D9 /* TableViewUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TableViewUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F7AFFDA1C46AD290006B3D9 /* TableViewUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewUITests.swift; sourceTree = "<group>"; };
 		3F7AFFDC1C46AD290006B3D9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3F7AFFE81C49571D0006B3D9 /* SuperHeroClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SuperHeroClass.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +101,7 @@
 			children = (
 				3F7AFFBA1C46AD290006B3D9 /* AppDelegate.swift */,
 				3F7AFFBC1C46AD290006B3D9 /* ViewController.swift */,
+				3F7AFFE81C49571D0006B3D9 /* SuperHeroClass.swift */,
 				3F7AFFBE1C46AD290006B3D9 /* Main.storyboard */,
 				3F7AFFC11C46AD290006B3D9 /* Assets.xcassets */,
 				3F7AFFC31C46AD290006B3D9 /* LaunchScreen.storyboard */,
@@ -258,6 +261,7 @@
 			files = (
 				3F7AFFBD1C46AD290006B3D9 /* ViewController.swift in Sources */,
 				3F7AFFBB1C46AD290006B3D9 /* AppDelegate.swift in Sources */,
+				3F7AFFE91C49571D0006B3D9 /* SuperHeroClass.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -484,6 +488,7 @@
 				3F7AFFE11C46AD290006B3D9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		3F7AFFE21C46AD290006B3D9 /* Build configuration list for PBXNativeTarget "TableViewTests" */ = {
 			isa = XCConfigurationList;
@@ -492,6 +497,7 @@
 				3F7AFFE41C46AD290006B3D9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		3F7AFFE51C46AD290006B3D9 /* Build configuration list for PBXNativeTarget "TableViewUITests" */ = {
 			isa = XCConfigurationList;
@@ -500,6 +506,7 @@
 				3F7AFFE71C46AD290006B3D9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
