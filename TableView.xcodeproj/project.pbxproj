@@ -15,6 +15,7 @@
 		3F7AFFD01C46AD290006B3D9 /* TableViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F7AFFCF1C46AD290006B3D9 /* TableViewTests.swift */; };
 		3F7AFFDB1C46AD290006B3D9 /* TableViewUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F7AFFDA1C46AD290006B3D9 /* TableViewUITests.swift */; };
 		3F7AFFE91C49571D0006B3D9 /* SuperHeroClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F7AFFE81C49571D0006B3D9 /* SuperHeroClass.swift */; };
+		3F7AFFEB1C4E9E0C0006B3D9 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F7AFFEA1C4E9E0C0006B3D9 /* DetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		3F7AFFDA1C46AD290006B3D9 /* TableViewUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewUITests.swift; sourceTree = "<group>"; };
 		3F7AFFDC1C46AD290006B3D9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3F7AFFE81C49571D0006B3D9 /* SuperHeroClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SuperHeroClass.swift; sourceTree = "<group>"; };
+		3F7AFFEA1C4E9E0C0006B3D9 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +81,7 @@
 		3F7AFFAE1C46AD290006B3D9 = {
 			isa = PBXGroup;
 			children = (
+				3F7AFFEA1C4E9E0C0006B3D9 /* DetailViewController.swift */,
 				3F7AFFB91C46AD290006B3D9 /* TableView */,
 				3F7AFFCE1C46AD290006B3D9 /* TableViewTests */,
 				3F7AFFD91C46AD290006B3D9 /* TableViewUITests */,
@@ -262,6 +265,7 @@
 				3F7AFFBD1C46AD290006B3D9 /* ViewController.swift in Sources */,
 				3F7AFFBB1C46AD290006B3D9 /* AppDelegate.swift in Sources */,
 				3F7AFFE91C49571D0006B3D9 /* SuperHeroClass.swift in Sources */,
+				3F7AFFEB1C4E9E0C0006B3D9 /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

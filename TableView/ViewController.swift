@@ -12,8 +12,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
 {
     @IBOutlet weak var myTableView: UITableView!
     @IBOutlet weak var editButton: UIBarButtonItem!
-    var superheroes = ["Batman", "Superman", "Aquaman:", "Wonder Woman", "The Flash", "Spiderman"]
-    var realNames = ["Bruce Wayne", "Clark Kent", "Arther Curry", "Diana", "Barry Allen", "Peter Parker"]
+    var superheroes : [SuperHeroClass] = []
     
     override func viewDidLoad()
     {
@@ -21,6 +20,14 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         //Set tableview datasource and delegate to view controller
         myTableView.dataSource = self
         myTableView.delegate = self
+        
+        superheroes.append(SuperHeroClass(Name: "Batman", Alias: "Bruce Wayne", Power: 70, Image: UIImage(named:"Batman")!))
+        superheroes.append(SuperHeroClass(Name: "Superman", Alias: "Clark Kent", Power: 9000, Image: UIImage(named:"default")!))
+        superheroes.append(SuperHeroClass(Name: "Aquaman", Alias: "Arthur Curry", Power: 25, Image: UIImage(named:"Aquaman")!))
+        //superheroes.append(SuperHeroClass(Name: "Spiderman", Alias: "Peter Parker", Power: 150, Image: UIImage(named:"Spiderman")!))
+        superheroes.append(SuperHeroClass(Name: "Wonderwoman", Alias: "?", Power: 200, Image: UIImage(named:"default")!))
+        superheroes.append(SuperHeroClass(Name: "The Flash", Alias: "?", Power: 100, Image: UIImage(named:"default")!))
+        
     }
     
     //Required for tableview protocol - sends data to cell
@@ -28,8 +35,8 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         //Creates the cell to be returned
         let myCell = myTableView.dequeueReusableCellWithIdentifier("myCell", forIndexPath: indexPath)
         //Inputs the given super hero and name at given cell position
-        myCell.textLabel!.text = superheroes[indexPath.row]
-        myCell.detailTextLabel!.text = realNames[indexPath.row]
+        myCell.textLabel!.text = superheroes[indexPath.row].name
+        myCell.detailTextLabel!.text = superheroes[indexPath.row].alias
         return myCell
     }
     
@@ -45,7 +52,6 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         if editingStyle == .Delete
         {
             superheroes.removeAtIndex(indexPath.row)
-            realNames.removeAtIndex(indexPath.row)
             myTableView.reloadData()
         }
     }
@@ -64,8 +70,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         let addAction = UIAlertAction(title: "Add", style: .Default) { (addAction) -> Void in
             let superHeroTF = myAlert.textFields![0] as UITextField
             let aliasTF = myAlert.textFields![1] as UITextField
-            self.superheroes.append(superHeroTF.text!)
-            self.realNames.append(aliasTF.text!)
+            self.superheroes.append(SuperHeroClass(Name: superHeroTF.text!, Alias: aliasTF.text!))
             self.myTableView.reloadData()
         }
         myAlert.addAction(addAction)
@@ -78,9 +83,6 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         let superHero = superheroes[sourceIndexPath.row]
         superheroes.removeAtIndex(sourceIndexPath.row)
         superheroes.insert(superHero, atIndex: destinationIndexPath.row)
-        let alias = realNames[sourceIndexPath.row]
-        realNames.removeAtIndex(sourceIndexPath.row)
-        realNames.insert(alias, atIndex: destinationIndexPath.row)
     }
     @IBAction func editButtonTapped(sender: UIBarButtonItem)
     {
@@ -94,6 +96,14 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             myTableView.editing = false
             editButton.tag = 0
         }
+    }
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)
+    {
+        let detailView = segue.destinationViewController as! DetailViewController
+        let selectedRow = myTableView.indexPathForSelectedRow!.row
+        detailView.superHero = superheroes[selectedRow]
+        detailView.tableView = myTableView
+        
     }
 }
 

@@ -23,4 +23,10 @@ class SuperHeroClass: NSObject
         power = Power
         image = Image
     }
+    init(Name: String, Alias: String)
+    {
+        super.init()
+        name = Name
+        alias = Alias
+    }
 }
